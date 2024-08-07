@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function fetchProducts() {
         try {
+            console.log('Fetching products...');
             const response = await fetch('https://api.aliexpress.com/v2/products?category_id=205006298', {
                 headers: {
                     'Authorization': 'Bearer YOUR_API_KEY' // Substitua pelo seu token de API
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             const data = await response.json();
+            console.log('Products fetched successfully:', data);
             displayProducts(data.products);
         } catch (error) {
             console.error('Error fetching products:', error);
