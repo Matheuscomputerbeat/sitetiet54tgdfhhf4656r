@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function displayProducts(products) {
         const productList = document.getElementById('product-list');
+        productList.innerHTML = ''; // Limpar a lista de produtos antes de adicionar novos itens
         products.forEach(product => {
             const productItem = document.createElement('div');
             productItem.className = 'product-item';
@@ -39,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.purchaseProduct = function(productId) {
         // Implement purchase logic here
         alert(`Product ${productId} purchased!`);
-        
+
         // Log the purchase to the server
         logPurchase(productId);
 
